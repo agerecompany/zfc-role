@@ -1,0 +1,29 @@
+Agere\Role\Model\Role:
+  type: entity
+  table: role
+  fields:
+    id:
+      id: true
+      type: integer
+      generator:
+        strategy: AUTO
+      options:
+        unsigned: true
+    role:
+     type: string
+     length: 50
+    mnemo:
+      type: string
+      length: 30
+      default: ''
+    resource:
+      type: string
+      default: 'custom'
+    remove:
+      type: string
+      length: 1
+      default: '1'
+  manyToMany:
+    users:
+      targetEntity: Agere\User\Model\User
+      mappedBy: role
