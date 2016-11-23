@@ -63,7 +63,7 @@ $permissionTree = $permissionHelper->permissionTree($tabs);
 			?>
 			<?php foreach($tabs as $tab) { ?>
 				<?php $class = ($i == 1) ? $classActiveTab : ''; ?>
-				<!--<div class="tab-1 <?/*=$class*/?>"><a href="#tab<?/*=$i*/?>"><?/*=$tab->getTitle()*/?></a></div>-->
+				<div class="tab-1 <?=$class?>"><a href="#tab<?=$i?>"><?=$tab->getTitle()?></a></div>
 				<?php if (strrpos($tab->getUrl(), 'settings', -strlen($tab->getUrl())) !== false) {
 					$keySettings = $i;
 				} ?>
@@ -72,7 +72,7 @@ $permissionTree = $permissionHelper->permissionTree($tabs);
 		</div>
 		<!-- END header -->
 		<!-- content -->
-		<div class="body-content">
+		<div class="body-content checkbox col-sm-offset-1">
 			<?php foreach ($permissionTree as $key => $tree) { ?>
 				<?php $keyTab = $key + 1; ?>
 				<div id="tab<?=$keyTab?>">
